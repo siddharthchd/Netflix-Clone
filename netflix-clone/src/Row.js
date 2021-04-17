@@ -8,7 +8,8 @@ function Row({ title, fetchUrl }) {
         // [] => run once when the row loads, dont run again
         async function fetchData() {
             const request = await axios.get(fetchUrl);
-            console.log(request);
+            console.log("Request : ", request);
+            return request;
         }
         fetchData();
     }, []);
@@ -20,6 +21,6 @@ function Row({ title, fetchUrl }) {
             {/* container -> posters */}
         </div>
     )
-};
+}
 
-export default Row;
+export default Row
